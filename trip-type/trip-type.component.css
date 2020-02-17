@@ -1,0 +1,14 @@
+th,td{ 
+  width: 150px; 
+  text-align: left; 
+  padding: 10px;
+  }
+
+.wrap {
+  text-align: center;
+}
+
+button{
+  position: fixed;
+  bottom: 20rem;
+}

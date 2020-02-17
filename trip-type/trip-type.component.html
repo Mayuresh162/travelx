@@ -1,0 +1,63 @@
+<div class="container" style="margin-top:70px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form #triptypeForm="ngForm" (ngSubmit)="onSubmit(triptypeForm)">
+        <div class="table-responsive">
+          <table class="table" >
+            <tr>
+              <td>
+                <div class="radio" (click)="onTick()">
+                  <label><input type="radio" name="optradio">One way</label>
+                </div>
+              </td>
+              <td>
+                <div class="radio">
+                  <label><input type="radio" name="optradio">Round Trip</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="radio">
+                  <label><input type="radio" name="optradio">Multi City</label>
+                </div>
+              </td>
+              <td>
+                <div class="radio">
+                  <label><input type="radio" name="optradio">Package Option</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>From:</th>
+              <th>To:</th>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" ngModel id="from" name="from" placeholder="Bangalore" disabled></td>
+              <td>
+                <select id="cars">
+                  <option value=""></option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Kolkata">Kolkata</option>
+                </select></td>
+            </tr>
+            <tr>
+              <th>Departure Date:</th>
+              <th>Return Date:</th>
+            </tr> 
+            <tr>
+              <td><input type="date" value="date1" ngModel name="depDate" id="depDate"></td> 
+              <td><input type="date" value="date2"  ngModel name="returnDate" id="returnDate" *ngIf="!isTick"></td>
+            </tr>
+          </table>
+          <div class="wrap">
+            <button type="click" class="btn btn-success" [disabled]="!isTick">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

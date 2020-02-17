@@ -1,0 +1,25 @@
+<div class="container" style="margin-top:70px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form #tripdetailsForm="ngForm" (ngSubmit)="onSubmit(tripdetailsForm)">
+        <div class="form-group">  
+          <label for="username">Email Id</label>
+          <input type="email" id="email" class="form-control" ngModel name="email" required email/>
+        </div>
+        <div class="form-group">  
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" ngModel name="phone" required minlength="10"/>
+        </div>
+        <div class="form-group">
+          <label for="pickupLoc">Pickup Address</label>
+          <textarea ngModel name="pickupLoc" class="form-control" id="pickupLoc" cols="30" rows="10" required></textarea>
+        </div>
+        <div class="form-group">  
+          <label for="pickTime">Pickup Time</label>
+          <input type="time" id="pickTime" class="form-control" ngModel name="pickTime" required/>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!tripdetailsForm.valid">Proceed for payment</button>
+      </form>
+    </div>
+  </div>
+</div>

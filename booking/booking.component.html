@@ -1,0 +1,36 @@
+<div class="container" style="margin-top:70px">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+        <h2>Choose driver for your trip</h2>
+          <div class="dropdown pull-right">
+            <button class="dropbtn">Language Selection</button>
+            <div class="dropdown-content">
+              <a href="#">Hindi</a>
+              <a href="#">English</a>
+              <a href="#">Kannada</a>
+            </div>
+          </div>
+        <h3>Car type: Innova</h3>
+        <br><br><br><br><br><br><br>  
+        <div class="table-responsive">
+          <table class="table" border="2">
+            <th>Driver Name</th>
+            <th>Charges</th>
+            <th>Language Known</th>
+            <th>Select</th>
+            <tr *ngFor="let driver of drivers">
+              <td>{{driver.name}}</td>
+              <td>{{driver.price}}</td>
+              <td>{{driver.language}}</td>
+              <td><input type="checkbox" class="form-control" ngModel name="driver" value="driver" required></td>
+            </tr>
+          </table>
+          <div class="wrap">
+            <button type="submit" class="btn btn-success"[disabled]="!bookForm.valid">Book</button>
+          </div>
+        </div>
+      </form>
+    </div>    
+  </div>
+</div>
